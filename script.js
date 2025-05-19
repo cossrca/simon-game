@@ -51,6 +51,18 @@ $(document).keydown(function() {
     }, 100);
     }
 
+    //cicrle back to this section
+    function checkAnswer(currentLevel) {
+      if (userClickedPattern[currentLevel] === gamePattern[currentLevel]) {
+        nextSequence()
+      } else if (userClickedPattern[currentLevel] !== gamePattern[currentLevel]){
+        new Audio("sounds/wrong.mp3").play();
+        $("body").addClass("game-over");
+        setTimeout(funciton() {
+          $("body").removeClass("game-over");
+        }, 200);
+        }
+      }
 
   // sound logic function
 
